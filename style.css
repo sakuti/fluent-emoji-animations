@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: all 2s ease-in-out;
+}
+
+#blur {
+	position: fixed;
+	width: 120vw;
+	height: 120vh;
+	background-size: 100% 100%;
+	filter: blur(200px) brightness(0.3);
+	z-index: -1;
+}
+
+img.animate {
+	animation: loadImg 500ms ease-in-out forwards;
+}
+
+body {
+	background-color: black;
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+
+body.preloader {
+	filter: blur(100px);
+}
+
+@keyframes loadImg {
+	0% {
+		filter: blur(0px)
+	}
+	
+	50% {
+		filter: blur(150px)
+	}
+
+	100% {
+		filter: blur(0px)
+	}
+}
